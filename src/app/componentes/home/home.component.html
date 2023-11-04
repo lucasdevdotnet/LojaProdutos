@@ -1,0 +1,59 @@
+<!-- <h1 *ngIf="title; else mensagemPadrao">Bem vindo {{title}}</h1>
+
+<ng-template #mensagemPadrao>
+  <h1>Bem vindo ao Treinamento</h1>
+</ng-template>
+
+<span [ngSwitch]="title">
+  <p *ngSwitchCase="true">
+    Esse é uma paragrafo verdadeiro
+  </p>
+  <p *ngSwitchCase="false">
+    Esse é uma paragrafo falso
+  </p>
+  <p *ngSwitchDefault>
+    Esse é uma paragrafo Default
+  </p>
+</span>
+
+<!-- <img [src]="imgUrl" alt=""> -->
+<!-- <button (click)="mudarTexto()">Mudar texto</button>
+
+<input [(ngModel)]="title" type="text">
+
+<table>
+  <th>Nome</th>
+  <th>Sexo</th>
+  <th>Idade</th>
+  <tr *ngFor="let cliente of clientes">
+    <td>{{cliente.nome}}</td>
+    <td>{{cliente.sexo}}</td>
+    <td>{{cliente.idade}}</td>
+  </tr>
+</table> --> -->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="sexo">
+    <th mat-header-cell *matHeaderCellDef> Sexo </th>
+    <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="idade">
+    <th mat-header-cell *matHeaderCellDef> Idade </th>
+    <td mat-cell *matCellDef="let element"> {{element.idade}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

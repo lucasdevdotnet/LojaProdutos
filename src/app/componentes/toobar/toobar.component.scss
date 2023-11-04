@@ -1,0 +1,59 @@
+.topnav {
+  background-color: #3a3939;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+.active {
+
+  color: #fff;
+}
+
+.active {
+  a{
+    color: #fff;;
+  }
+}
+
+.active
+{
+  columns: #fff;
+}
+
+a:hover,
+a:active
+{
+  color: lightgray;
+}
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+a {
+  padding-right: 20px;
+  text-decoration: none;
+  color: #000;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+}
+ul {
+  padding: 0;
+  margin: 0;
+ list-style: none;
+}

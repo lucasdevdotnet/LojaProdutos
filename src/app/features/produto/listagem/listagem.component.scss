@@ -1,0 +1,23 @@
+.example-card {
+  max-width: 400px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.flex {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+}
+
+img{height: 300px;
+  object-fit: contain;
+}
+
+
+.title{
+
+  font: 500;
+  margin: 0 auto;
+}
+
