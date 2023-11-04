@@ -16,12 +16,18 @@ export class CadastroComponent implements OnInit {
   constructor(private produtoService: ProdutoService, private activateRoute: ActivatedRoute) {
 
   }
+
+  salvarProduto(): void {
+
+  }
+
   ngOnInit(): void {
-    
+
     this.id = this.activateRoute.snapshot.url[1].path;
 
     this.produtoService.getProdutoId(this.id).subscribe(produto => {
       this.produto = produto;
+      console.log(this.produto)
 
     })
 

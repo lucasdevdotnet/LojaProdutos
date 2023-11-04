@@ -1,1 +1,23 @@
-<p>cadastro works!</p>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Titulo</mat-label>
+    <input matInput placeholder="Ex. titulo do produto">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Preço:</mat-label>
+    <input matInput placeholder="Difgite um preço" >
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Estoque:</mat-label>
+    <input type="number" matInput placeholder="digite o estoque">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Descrição:</mat-label>
+    <textarea matInput placeholder="descreva o produto"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="salvarProduto">Salvar</button>
+</form>
