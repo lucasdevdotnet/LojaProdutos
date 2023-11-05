@@ -1,26 +1,42 @@
 <h1 class="tituloPagina">{{tituloPagina}}</h1>
-<form class="example-form">
+<form class="example-form" [formGroup]="formCadastroProduto">
   <mat-form-field class="example-full-width">
     <mat-label>Titulo</mat-label>
-    <input matInput [(ngModel)]="nome" [ngModelOptions]="{standalone :true}"  placeholder="Ex. titulo do produto">
+    <input matInput  placeholder="Ex. titulo do produto" min="4" formControlName="nome">
+    <mat-error>Favor informe um titulo</mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Preço:</mat-label>
-    <input matInput placeholder="Difgite um preço" [(ngModel)]="preco" [ngModelOptions]="{standalone :true}">
+    <input matInput placeholder="Difgite um preço" formControlName="preco">
+    <mat-error>Favor informe um preco</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Senha:</mat-label>
+    <input type="password" matInput placeholder="Difgite uma senha" formControlName="password">
+    <mat-error>Favor informe uma senha</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>E-mail:</mat-label>
+    <input matInput placeholder="Difgite um preço" formControlName="email">
+    <mat-error>Favor informe um e-mail</mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Estoque:</mat-label>
-    <input type="number" [(ngModel)]="estoque" [ngModelOptions]="{standalone :true}" matInput placeholder="digite o estoque">
+    <input type="number" matInput placeholder="digite o estoque" formControlName="estoque">
+    <mat-error>Favor informe um estoque</mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Descrição:</mat-label>
-    <textarea matInput placeholder="descreva o produto" [(ngModel)]="descricao" [ngModelOptions]="{standalone :true}"></textarea>
+    <textarea matInput placeholder="descreva o produto" formControlName="descricao" ></textarea>
+    <mat-error>Favor informe uma descricao</mat-error>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit" (click)="salvarProduto()">Salvar</button>
+  <button mat-raised-button color="primary"  (click)="salvarProduto()"  [disabled]="!formCadastroProduto.valid">Salvar</button>
   <br>
   <!-- <button mat-raised-button color="primary" (click)="salvarProduto">Redefinir</button> -->
 </form>

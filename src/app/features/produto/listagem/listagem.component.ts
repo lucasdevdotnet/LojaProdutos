@@ -10,33 +10,40 @@ import { Router } from '@angular/router';
 })
 export class ListagemComponent implements OnInit {
 
-produtos! : Produtos
+  produtos!: Produtos
 
-constructor(private produtoService: ProdutoService, private router:Router) {
+  constructor(private produtoService: ProdutoService, private router: Router) {
 
-}
+  }
 
-criarNovoProduto(): void
-{
-  this.router.navigate(['produto','novo-produto']);
-}
-// RXJS
-//Javascripts  axios axios.get() => requisição assincronas
-// async return await
-//Angular usa RXJS e não usa promisse
-//Angular usa o Observable
-selecionarProduto(produto: Produto)
-{
-this.router.navigate(['produto','editar-produto', produto.id]);
-}
+  deletarProduto(produto: Produto): void {
+
+    this.produtoService.excluirProduto(produto.id.toString()).subscribe(response => {
+     this.router.navigate(['produto']);
+     
+    })
+
+  }
+
+  criarNovoProduto(): void {
+    this.router.navigate(['produto', 'novo-produto']);
+  }
+  // RXJS
+  //Javascripts  axios axios.get() => requisição assincronas
+  // async return await
+  //Angular usa RXJS e não usa promisse
+  //Angular usa o Observable
+  selecionarProduto(produto: Produto) {
+    this.router.navigate(['produto', 'editar-produto', produto.id]);
+  }
 
   ngOnInit(): void {
 
-    this.produtoService.getProdutos().subscribe(produtos =>{
-    this.produtos = produtos
-    console.log(this.produtos)
+    this.produtoService.getProdutos().subscribe(produtos => {
+      this.produtos = produtos
+      console.log(this.produtos)
 
-  });
+    });
   }
 
 }

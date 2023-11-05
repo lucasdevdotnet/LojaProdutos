@@ -7,7 +7,6 @@ import { Produto, Produtos } from '../../models/produto.model';
   providedIn: 'root',
 })
 export class ProdutoService {
-  // injeção de dependencias
 
   private baseUrl = 'http://localhost:3000/'
 
@@ -27,5 +26,9 @@ export class ProdutoService {
     return this.http.get<Produto>(`${this.baseUrl}produtos/${id}`);
   }
 
+  excluirProduto(id:string): Observable<Produto> {
+    return this.http.delete<Produto>(`${this.baseUrl}produtos/${id}`);
+  }
+  
   constructor(private http: HttpClient) {}
 }

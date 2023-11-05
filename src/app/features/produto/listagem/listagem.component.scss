@@ -2,12 +2,14 @@
   max-width: 400px;
   margin: 20px;
   cursor: pointer;
+  margin: 20px;
 }
 
 .flex {
  display: flex;
  flex-direction: row;
  justify-content: space-between;
+ flex-wrap: wrap;
 }
 
 img{height: 300px;
