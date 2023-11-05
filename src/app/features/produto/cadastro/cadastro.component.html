@@ -1,23 +1,26 @@
+<h1 class="tituloPagina">{{tituloPagina}}</h1>
 <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Titulo</mat-label>
-    <input matInput placeholder="Ex. titulo do produto">
+    <input matInput [(ngModel)]="nome" [ngModelOptions]="{standalone :true}"  placeholder="Ex. titulo do produto">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Preço:</mat-label>
-    <input matInput placeholder="Difgite um preço" >
+    <input matInput placeholder="Difgite um preço" [(ngModel)]="preco" [ngModelOptions]="{standalone :true}">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Estoque:</mat-label>
-    <input type="number" matInput placeholder="digite o estoque">
+    <input type="number" [(ngModel)]="estoque" [ngModelOptions]="{standalone :true}" matInput placeholder="digite o estoque">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Descrição:</mat-label>
-    <textarea matInput placeholder="descreva o produto"></textarea>
+    <textarea matInput placeholder="descreva o produto" [(ngModel)]="descricao" [ngModelOptions]="{standalone :true}"></textarea>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="salvarProduto">Salvar</button>
+  <button mat-raised-button color="primary" type="submit" (click)="salvarProduto()">Salvar</button>
+  <br>
+  <!-- <button mat-raised-button color="primary" (click)="salvarProduto">Redefinir</button> -->
 </form>

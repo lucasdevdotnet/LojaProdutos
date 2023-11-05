@@ -15,6 +15,14 @@ export class ProdutoService {
     return this.http.get<Produtos>(`${this.baseUrl}produtos`);
   }
 
+  atualizarProdutos(produto : Produto): Observable<Produto> {
+    return this.http.put<Produto>(`${this.baseUrl}produtos/${produto.id}`, produto);
+  }
+
+  criarProdutos(produto : Produto): Observable<Produto> {
+    return this.http.post<Produto>(`${this.baseUrl}produtos`, produto);
+  }
+
   getProdutoId(id:string): Observable<Produto> {
     return this.http.get<Produto>(`${this.baseUrl}produtos/${id}`);
   }

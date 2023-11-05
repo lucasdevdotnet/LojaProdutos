@@ -15,6 +15,11 @@ produtos! : Produtos
 constructor(private produtoService: ProdutoService, private router:Router) {
 
 }
+
+criarNovoProduto(): void
+{
+  this.router.navigate(['produto','novo-produto']);
+}
 // RXJS
 //Javascripts  axios axios.get() => requisição assincronas
 // async return await

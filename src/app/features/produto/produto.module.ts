@@ -7,6 +7,8 @@ import { ListagemComponent } from './listagem/listagem.component';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatInputModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule
   ]
 })
 export class ProdutoModule { }
